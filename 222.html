@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Ucapan Ulang Tahun Mama Jumiasih</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #ffe0f0, #ffeaea);
+      text-align: center;
+      padding: 50px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #d81b60;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #f06292;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #ec407a;
+    }
+
+    #messageBox {
+      opacity: 0;
+      visibility: hidden;
+      max-width: 600px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    #messageBox.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #messageBox.hide {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+    }
+
+    audio {
+      display: none;
+    }
+
+    .emoji {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎂 Ucapan Ulang Tahun untuk Mama 🎂</h1>
+
+  <button onclick="tampilkanUcapan()">Tampilkan Ucapan</button>
+  <button onclick="sembunyikanUcapan()">Sembunyikan Ucapan</button>
+
+  <div id="messageBox">
+    <div class="emoji">💖🌸🎉</div>
+    <h2>Selamat Ulang Tahun ke-40, Mama Jumiasih!</h2>
+    <p>Terima kasih atas cinta, doa, dan perjuangan yang tiada henti dari Mama.</p>
+    <p>Semoga Mama selalu diberikan kesehatan, kebahagiaan, dan umur panjang yang penuh berkah.</p>
+    <p>Aku bangga dan bersyukur punya Mama sebaik dan sekuat Mama. Aku sayang Mama selalu. 🤍</p>
+  </div>
+
+  <audio id="musik">
+    <source src="musik-ulang-tahun.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung audio.
+  </audio>
+
+  <script>
+    const box = document.getElementById("messageBox");
+    const musik = document.getElementById("musik");
+
+    function tampilkanUcapan() {
+      box.classList.remove("hide");
+      box.classList.add("show");
+      musik.play();
+    }
+
+    function sembunyikanUcapan() {
+      box.classList.remove("show");
+      box.classList.add("hide");
+      musik.pause();
+      musik.currentTime = 0;
+    }
+  </script>
+
+</body>
+</html>
